@@ -5,7 +5,7 @@ tags:
 ---
 # centos
 
-1. 卸载旧版本
+## 1. 卸载旧版本
 
    ```bash
    $ sudo yum remove docker \
@@ -18,7 +18,7 @@ tags:
                      docker-engine
    ```
 
-1. 安装依赖
+## 2. 安装依赖
 
    ```bash
    $ sudo yum install -y yum-utils \
@@ -26,7 +26,7 @@ tags:
      lvm2
    ```
 
-2. 设置镜像源
+## 3. 设置镜像源
 
    ```bash
    # 官方镜像源
@@ -38,26 +38,26 @@ tags:
        --add-repo \
        http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
    ```
-3. 列出docker版本
+## 4. 列出docker版本
    ```bash
    $ yum list docker-ce --showduplicates | sort -r
    ```
-4. 安装
+## 5. 安装
    ```bash
    $ sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
    ```
-5. 启动docker
+## 6. 启动docker
    ```bash
    # 开机自启
    $ sudo systemctl enable docker
    # 启动
    $ sudo systemctl start docker
    ```
-6. 非root用户需将当前用户加入docker组
+## 7. 非root用户需将当前用户加入docker组
    ```bash
    $ sudo usermod -aG docker $USER
    ```
-7. 配置镜像加速
+## 8. 配置镜像加速
    ```bash
    # 编辑配置文件
    $ vim /etc/docker/daemon.json
@@ -79,14 +79,14 @@ tags:
    $ sudo systemctl daemon-reload
    $ sudo systemctl restart docker
    ```
-8. 安装docker compose
+## 9. 安装docker compose
    ```bash
    # 安装
    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
    # 授予执行权限
    $ sudo chmod +x /usr/local/bin/docker-compose
    ```
-9. swarm mode
+## 10. swarm mode
    ```bash
    # 初始化swarm
    $ docker swarm init
@@ -95,7 +95,7 @@ tags:
    # 修改worker节点远程访问
    $ vim /usr/lib/systemd/system/docker.service
    ```
-10. /usr/lib/systemd/system/docker.service
+## 11. /usr/lib/systemd/system/docker.service
    ```bash
    # ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://{本机ip || 内网ip || 0.0.0.0}:2375
    # 重启

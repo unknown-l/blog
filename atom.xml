@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Unknown</title>
   
-  
+  <subtitle>Fourier</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://unknown-l.github.io/blog/"/>
-  <updated>2020-03-06T03:40:04.551Z</updated>
+  <updated>2020-03-06T10:10:43.540Z</updated>
   <id>https://unknown-l.github.io/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://unknown-l.github.io/blog/2020/03/06/install-docker/"/>
     <id>https://unknown-l.github.io/blog/2020/03/06/install-docker/</id>
     <published>2020-03-06T11:38:22.000Z</published>
-    <updated>2020-03-06T03:40:04.551Z</updated>
+    <updated>2020-03-06T10:10:43.540Z</updated>
     
     <content type="html"><![CDATA[<h1 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h1><ol><li><p>卸载旧版本</p><pre><code class="bash">$ sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common \                  docker-latest \                  docker-latest-logrotate \                  docker-logrotate \                  docker-engine</code></pre></li><li><p>安装依赖</p><pre><code class="bash">$ sudo yum install -y yum-utils \  device-mapper-persistent-data \  lvm2</code></pre></li><li><p>设置镜像源</p><pre><code class="bash"># 官方镜像源$ sudo yum-config-manager \    --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo# 国内镜像源$ sudo yum-config-manager \    --add-repo \    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</code></pre></li><li><p>列出docker版本</p><pre><code class="bash">$ yum list docker-ce --showduplicates | sort -r</code></pre></li><li><p>安装</p><pre><code class="bash">$ sudo yum install docker-ce-&lt;VERSION_STRING&gt; docker-ce-cli-&lt;VERSION_STRING&gt; containerd.io</code></pre></li><li><p>启动docker</p><pre><code class="bash"># 开机自启$ sudo systemctl enable docker# 启动$ sudo systemctl start docker</code></pre></li><li><p>非root用户需将当前用户加入docker组</p><pre><code class="bash">$ sudo usermod -aG docker $USER</code></pre></li><li><p>配置镜像加速</p><pre><code class="bash"># 编辑配置文件$ vim /etc/docker/daemon.json# registry-mirrors 镜像加速# insecure-registries 私有http仓库</code></pre><pre><code class="json">{    &quot;insecure-registries&quot;: [         &quot;xxx.xxx.xxx.xxx:xxxx&quot;     ],     &quot;registry-mirrors&quot;: [         &quot;https://registry.docker-cn.com&quot;     ]}</code></pre><pre><code class="bash"># 重启服务$ sudo systemctl daemon-reload$ sudo systemctl restart docker</code></pre></li><li><p>安装docker compose</p><pre><code class="bash"># 安装$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose# 授予执行权限$ sudo chmod +x /usr/local/bin/docker-compose</code></pre></li><li><p>swarm mode</p><pre><code class="bash"># 初始化swarm$ docker swarm init# 查看加入命令$ docker swarm join-token worker# 修改worker节点远程访问$ vim /usr/lib/systemd/system/docker.service</code></pre></li><li><p>/usr/lib/systemd/system/docker.service</p><pre><code class="bash"># ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://{本机ip || 内网ip || 0.0.0.0}:2375# 重启</code></pre></li></ol>]]></content>
     

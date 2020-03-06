@@ -107,11 +107,13 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
+    <!-- <div class="view intro-2" id="background" parallax=true
          style="background: url('/blog/img/default.png')no-repeat center center;
-           background-size: cover;">
+           background-size: cover;"> -->
+    <div class="view intro-2" id="background" parallax=true
+            style="">
       <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
+        <div class="mask rgba-black-light flex-center" style="background: #000;">
           <div class="container text-center white-text fadeInUp">
             <span class="h2" id="subtitle">
               
@@ -125,6 +127,14 @@
               <i class="fas fa-angle-down scroll-down-arrow"></i>
             </div>
           
+        </div>
+      </div>
+      <div style="position: absolute;height: 100%;width: 100%;">
+        <div style="width: 50%;height: 100%;background: rgba(0, 0, 0, 0);float: left;">
+          <canvas id="draw-zone" width="800" height="600"></canvas>
+        </div>
+        <div style="width: 50%;height: 100%;background: rgba(0, 0, 0, 0);float: left;">
+          <canvas id="circle-zone" width="800" height="600"></canvas>
         </div>
       </div>
     </div>
@@ -317,7 +327,7 @@ $ sudo yum-config-manager \
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "&nbsp;",
+        "Fourier&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -383,6 +393,6 @@ $ sudo yum-config-manager \
 
 
 
-
+    <script src="/blog/js/main.bundle.js"></script>
 </body>
 </html>

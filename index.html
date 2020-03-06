@@ -165,28 +165,21 @@
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">centos
-卸载旧版本
-$ sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine
-
-安装依赖
-$ sudo yum install -y yum-utils \
-  device-mapper-persistent-data \
-  lvm2
-
-设置镜像源
-# 官方镜像源
-$ sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-# 国</div>
+          <div class="index-text mb-1">centos1. 卸载旧版本   $ sudo yum remove docker \
+                     docker-client \
+                     docker-client-latest \
+                     docker-common \
+                     docker-latest \
+                     docker-latest-logrotate \
+                     docker-logrotate \
+                     docker-engine
+2. 安装依赖   $ sudo yum install -y yum-utils \
+     device-mapper-persistent-data \
+     lvm2
+3. 设置镜像源   # 官方镜像源
+   $ sudo yum-config-manager \
+       --add-repo \
+       https://dow</div>
         </div>
       </a>
 

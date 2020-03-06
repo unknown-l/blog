@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: unknown
+title: Unknown
 subtitle: ''
 description: ''
 keywords:
-author: LC
-language: zh
+author: John Doe
+language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://unknown-l.github.io/
-root: /
+url: https://unknown-l.github.io/blog
+root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -93,25 +93,9 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: ayer
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
-
-# hexo-generator-searchdb
-search:
-  path: search.xml
-  field: post
-  format: html
-
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-  hub:
-  content:
-  content_limit: 140
-  content_limit_delim: ' '
-  order_by: -date

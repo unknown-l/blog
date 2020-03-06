@@ -7,7 +7,7 @@ title: Unknown
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: LC
 language: zh-CN
 timezone: ''
 
@@ -45,12 +45,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
+  enable: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -93,25 +88,9 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: ayer
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
-
-# hexo-generator-searchdb
-search:
-  path: search.xml
-  field: post
-  format: html
-
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-  hub:
-  content:
-  content_limit: 140
-  content_limit_delim: ' '
-  order_by: -date

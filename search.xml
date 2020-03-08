@@ -57,5 +57,13 @@
 <h2 id="11-usr-lib-systemd-system-docker-service"><a href="#11-usr-lib-systemd-system-docker-service" class="headerlink" title="11. /usr/lib/systemd/system/docker.service"></a>11. /usr/lib/systemd/system/docker.service</h2><pre><code class="bash">   # ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://{本机ip || 内网ip || 0.0.0.0}:2375
    # 重启</code></pre>
 ]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>centos</tag>
+        <tag>docker</tag>
+      </tags>
   </entry>
 </search>

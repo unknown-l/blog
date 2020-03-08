@@ -1,7 +1,12 @@
 ---
 title: centos 安装 docker
 date: 2020-03-06 11:38:22
+categories: 
+- docker
 tags:
+- linux
+- centos
+- docker
 ---
 # centos
 

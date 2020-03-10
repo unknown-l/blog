@@ -1,6 +1,6 @@
 ---
 title: centos 安装 docker
-index_img: /img/docker.jpg
+index_img: /blog/img/docker.jpg
 date: 2020-03-06 11:38:22
 categories: 
 - docker

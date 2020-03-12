@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git配置ssh登录</title>
+    <url>/blog/2020/03/12/git-ssh/</url>
+    <content><![CDATA[<h2 id="1-生成ssh密钥"><a href="#1-生成ssh密钥" class="headerlink" title="1. 生成ssh密钥"></a>1. 生成ssh密钥</h2><pre><code class="bash">$  ssh-keygen -o -t rsa -b 4096 -C &quot;email@example.com&quot;</code></pre>
+<h2 id="2-复制公钥"><a href="#2-复制公钥" class="headerlink" title="2. 复制公钥"></a>2. 复制公钥</h2><pre><code class="bash">$ cat ~/.ssh/id_rsa.pub</code></pre>
+<h2 id="3-gitlab或github管理页面添加ssh-key"><a href="#3-gitlab或github管理页面添加ssh-key" class="headerlink" title="3. gitlab或github管理页面添加ssh-key"></a>3. gitlab或github管理页面添加ssh-key</h2><h2 id="4-配置本机使用的私钥-创建并编辑-ssh-config"><a href="#4-配置本机使用的私钥-创建并编辑-ssh-config" class="headerlink" title="4. 配置本机使用的私钥 - 创建并编辑~/.ssh/config"></a>4. 配置本机使用的私钥 - 创建并编辑<code>~/.ssh/config</code></h2><pre><code class="bash"># 注意如果git私有仓库配置了其他ssh端口，下面需配置PORT
+Host gitlab.example.com         // git仓库域名
+    User git                    // git
+    Hostname gitlab.example.com // git仓库域名
+    PORT 8022                   // 默认22，如果私有仓库使用其他端口需配置如：8022
+    IdentityFile ~/.ssh/id_rsa  // 私钥路径</code></pre>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>centos 安装 docker</title>
     <url>/blog/2020/03/06/install-docker/</url>
     <content><![CDATA[<h1 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h1><h2 id="1-卸载旧版本"><a href="#1-卸载旧版本" class="headerlink" title="1. 卸载旧版本"></a>1. 卸载旧版本</h2><pre><code class="bash">   $ sudo yum remove docker \

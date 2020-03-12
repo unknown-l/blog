@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://unknown-l.github.io/blog/"/>
-  <updated>2020-03-10T05:13:52.677Z</updated>
+  <updated>2020-03-12T02:37:02.079Z</updated>
   <id>https://unknown-l.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>git配置ssh登录</title>
+    <link href="https://unknown-l.github.io/blog/2020/03/12/git-ssh/"/>
+    <id>https://unknown-l.github.io/blog/2020/03/12/git-ssh/</id>
+    <published>2020-03-12T10:30:52.000Z</published>
+    <updated>2020-03-12T02:37:02.079Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-生成ssh密钥"><a href="#1-生成ssh密钥" class="headerlink" title="1. 生成ssh密钥"></a>1. 生成ssh密钥</h2><pre><code class="bash">$  ssh-keygen -o -t rsa -b 4096 -C &quot;email@example.com&quot;</code></pre><h2 id="2-复制公钥"><a href="#2-复制公钥" class="headerlink" title="2. 复制公钥"></a>2. 复制公钥</h2><pre><code class="bash">$ cat ~/.ssh/id_rsa.pub</code></pre><h2 id="3-gitlab或github管理页面添加ssh-key"><a href="#3-gitlab或github管理页面添加ssh-key" class="headerlink" title="3. gitlab或github管理页面添加ssh-key"></a>3. gitlab或github管理页面添加ssh-key</h2><h2 id="4-配置本机使用的私钥-创建并编辑-ssh-config"><a href="#4-配置本机使用的私钥-创建并编辑-ssh-config" class="headerlink" title="4. 配置本机使用的私钥 - 创建并编辑~/.ssh/config"></a>4. 配置本机使用的私钥 - 创建并编辑<code>~/.ssh/config</code></h2><pre><code class="bash"># 注意如果git私有仓库配置了其他ssh端口，下面需配置PORTHost gitlab.example.com         // git仓库域名    User git                    // git    Hostname gitlab.example.com // git仓库域名    PORT 8022                   // 默认22，如果私有仓库使用其他端口需配置如：8022    IdentityFile ~/.ssh/id_rsa  // 私钥路径</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-生成ssh密钥&quot;&gt;&lt;a href=&quot;#1-生成ssh密钥&quot; class=&quot;headerlink&quot; title=&quot;1. 生成ssh密钥&quot;&gt;&lt;/a&gt;1. 生成ssh密钥&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$  ssh-keygen -o -t
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://unknown-l.github.io/blog/categories/git/"/>
+    
+    
+      <category term="git" scheme="https://unknown-l.github.io/blog/tags/git/"/>
+    
+      <category term="ssh" scheme="https://unknown-l.github.io/blog/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
     <title>centos 安装 docker</title>
     <link href="https://unknown-l.github.io/blog/2020/03/06/install-docker/"/>
     <id>https://unknown-l.github.io/blog/2020/03/06/install-docker/</id>
     <published>2020-03-06T11:38:22.000Z</published>
-    <updated>2020-03-10T05:13:52.677Z</updated>
+    <updated>2020-03-12T02:37:02.079Z</updated>
     
     <content type="html"><![CDATA[<h1 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h1><h2 id="1-卸载旧版本"><a href="#1-卸载旧版本" class="headerlink" title="1. 卸载旧版本"></a>1. 卸载旧版本</h2><pre><code class="bash">   $ sudo yum remove docker \                     docker-client \                     docker-client-latest \                     docker-common \                     docker-latest \                     docker-latest-logrotate \                     docker-logrotate \                     docker-engine</code></pre><h2 id="2-安装依赖"><a href="#2-安装依赖" class="headerlink" title="2. 安装依赖"></a>2. 安装依赖</h2><pre><code class="bash">   $ sudo yum install -y yum-utils \     device-mapper-persistent-data \     lvm2</code></pre><h2 id="3-设置镜像源"><a href="#3-设置镜像源" class="headerlink" title="3. 设置镜像源"></a>3. 设置镜像源</h2><pre><code class="bash">   # 官方镜像源   $ sudo yum-config-manager \       --add-repo \       https://download.docker.com/linux/centos/docker-ce.repo   # 国内镜像源   $ sudo yum-config-manager \       --add-repo \       http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</code></pre><h2 id="4-列出docker版本"><a href="#4-列出docker版本" class="headerlink" title="4. 列出docker版本"></a>4. 列出docker版本</h2><pre><code class="bash">   $ yum list docker-ce --showduplicates | sort -r</code></pre><h2 id="5-安装"><a href="#5-安装" class="headerlink" title="5. 安装"></a>5. 安装</h2><pre><code class="bash">   $ sudo yum install docker-ce-&lt;VERSION_STRING&gt; docker-ce-cli-&lt;VERSION_STRING&gt; containerd.io</code></pre><h2 id="6-启动docker"><a href="#6-启动docker" class="headerlink" title="6. 启动docker"></a>6. 启动docker</h2><pre><code class="bash">   # 开机自启   $ sudo systemctl enable docker   # 启动   $ sudo systemctl start docker</code></pre><h2 id="7-非root用户需将当前用户加入docker组"><a href="#7-非root用户需将当前用户加入docker组" class="headerlink" title="7. 非root用户需将当前用户加入docker组"></a>7. 非root用户需将当前用户加入docker组</h2><pre><code class="bash">   $ sudo usermod -aG docker $USER</code></pre><h2 id="8-配置镜像加速"><a href="#8-配置镜像加速" class="headerlink" title="8. 配置镜像加速"></a>8. 配置镜像加速</h2><pre><code class="bash">   # 编辑配置文件   $ vim /etc/docker/daemon.json   # registry-mirrors 镜像加速   # insecure-registries 私有http仓库</code></pre><pre><code class="json">   {       &quot;insecure-registries&quot;: [            &quot;xxx.xxx.xxx.xxx:xxxx&quot;        ],        &quot;registry-mirrors&quot;: [            &quot;https://registry.docker-cn.com&quot;        ]   }</code></pre><pre><code class="bash">   # 重启服务   $ sudo systemctl daemon-reload   $ sudo systemctl restart docker</code></pre><h2 id="9-安装docker-compose"><a href="#9-安装docker-compose" class="headerlink" title="9. 安装docker compose"></a>9. 安装docker compose</h2><pre><code class="bash">   # 安装   $ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose   # 授予执行权限   $ sudo chmod +x /usr/local/bin/docker-compose</code></pre><h2 id="10-swarm-mode"><a href="#10-swarm-mode" class="headerlink" title="10. swarm mode"></a>10. swarm mode</h2><pre><code class="bash">   # 初始化swarm   $ docker swarm init   # 查看加入命令   $ docker swarm join-token worker   # 修改worker节点远程访问   $ vim /usr/lib/systemd/system/docker.service</code></pre><h2 id="11-usr-lib-systemd-system-docker-service"><a href="#11-usr-lib-systemd-system-docker-service" class="headerlink" title="11. /usr/lib/systemd/system/docker.service"></a>11. /usr/lib/systemd/system/docker.service</h2><pre><code class="bash">   # ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://{本机ip || 内网ip || 0.0.0.0}:2375   # 重启</code></pre>]]></content>
     

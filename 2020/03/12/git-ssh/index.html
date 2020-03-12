@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="LC">
   <meta name="keywords" content="">
-  <title>Unknown</title>
+  <title>git配置ssh登录 ~ Unknown</title>
 
   <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/blog/lib/bootstrap/css/bootstrap.min.css"  >
@@ -40,7 +40,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -107,10 +107,10 @@
   </div>
 </nav>
 
-    <!-- <div class="view intro-2" id="background" parallax=true
+    <!-- <div class="view intro-2" id="background" false
          style="background: url('/blog/img/default.png')no-repeat center center;
            background-size: cover;"> -->
-    <div class="view intro-2" id="background" parallax=true
+    <div class="view intro-2" id="background" false
             style="">
       <div class="full-bg-img">
         <div class="mask rgba-black-light flex-center" style="background: #000;">
@@ -120,12 +120,43 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期四, 三月 12日 2020, 10:30 上午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    126 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
           
         </div>
       </div>
@@ -142,134 +173,108 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/blog/2020/03/12/git-ssh/">
-        <p class="h4 index-header">git配置ssh登录</p>
-      </a>
-
-      <a href="/blog/2020/03/12/git-ssh/">
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">1. 生成ssh密钥$  ssh-keygen -o -t rsa -b 4096 -C &quot;email@example.com&quot;
-2. 复制公钥$ cat ~/.ssh/id_rsa.pub
-3. gitlab或github管理页面添加ssh-key4. 配置本机使用的私钥 - 创建并编辑~/.ssh/config# 注意如果git私有仓库配置了其他ssh端口，下面需配置PORT
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="1-生成ssh密钥"><a href="#1-生成ssh密钥" class="headerlink" title="1. 生成ssh密钥"></a>1. 生成ssh密钥</h2><pre><code class="bash">$  ssh-keygen -o -t rsa -b 4096 -C &quot;email@example.com&quot;</code></pre>
+<h2 id="2-复制公钥"><a href="#2-复制公钥" class="headerlink" title="2. 复制公钥"></a>2. 复制公钥</h2><pre><code class="bash">$ cat ~/.ssh/id_rsa.pub</code></pre>
+<h2 id="3-gitlab或github管理页面添加ssh-key"><a href="#3-gitlab或github管理页面添加ssh-key" class="headerlink" title="3. gitlab或github管理页面添加ssh-key"></a>3. gitlab或github管理页面添加ssh-key</h2><h2 id="4-配置本机使用的私钥-创建并编辑-ssh-config"><a href="#4-配置本机使用的私钥-创建并编辑-ssh-config" class="headerlink" title="4. 配置本机使用的私钥 - 创建并编辑~/.ssh/config"></a>4. 配置本机使用的私钥 - 创建并编辑<code>~/.ssh/config</code></h2><pre><code class="bash"># 注意如果git私有仓库配置了其他ssh端口，下面需配置PORT
 Host gitlab.example.com         // git仓库域名
     User git                    // git
     Hostname gitlab.example.com // git仓库域名
     PORT 8022                   // 默认22，如果私有仓库使用其他端口需配置如：8022
-    IdentityFile ~/.ssh/id_rsa  // 私钥路径
-</div>
-        </div>
-      </a>
+    IdentityFile ~/.ssh/id_rsa  // 私钥路径</code></pre>
 
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-12&nbsp;&nbsp;
-        
-        
-          <i class="iconfont icon-inbox"></i>
-          
-            <a href="/categories/git">git</a>&nbsp;
-          &nbsp;
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/git">git</a>&nbsp;
-          
-            <a href="/tags/ssh">ssh</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/blog/2020/03/06/install-docker/" target="_self">
-          <img src="/blog/img/docker.jpg" srcset="/blog/img/loading.gif" alt="centos 安装 docker" class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/blog/2020/03/06/install-docker/">
-        <p class="h4 index-header">centos 安装 docker</p>
-      </a>
-
-      <a href="/blog/2020/03/06/install-docker/">
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">centos1. 卸载旧版本   $ sudo yum remove docker \
-                     docker-client \
-                     docker-client-latest \
-                     docker-common \
-                     docker-latest \
-                     docker-latest-logrotate \
-                     docker-logrotate \
-                     docker-engine
-2. 安装依赖   $ sudo yum install -y yum-utils \
-     device-mapper-persistent-data \
-     lvm2
-3. 设置镜像源   # 官方镜像源
-   $ sudo yum-config-manager \
-       --add-repo \
-       https://dow</div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-06&nbsp;&nbsp;
-        
-        
-          <i class="iconfont icon-inbox"></i>
-          
-            <a href="/categories/docker">docker</a>&nbsp;
-          &nbsp;
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/linux">linux</a>&nbsp;
-          
-            <a href="/tags/centos">centos</a>&nbsp;
-          
-            <a href="/tags/docker">docker</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-              </div>
-            </div>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+              <span>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/git">git</a>
+                  &nbsp;
+                
+              </span>&nbsp;&nbsp;
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/git">git</a>
+                
+                  <a class="hover-with-bg" href="/tags/ssh">ssh</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <div id="vcomments" style="width: 90%; margin: 0 auto;"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script>
+    var notify = 'false' === true;
+    var verify = 'false' === true;
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "sWoRthhv98nIBY8f51N8fytp-9Nh9j0Va",
+        app_key: "5YGT5WzDvD3BLrhY8Sc6cGzy",
+        placeholder: "说点什么",
+        avatar: "retro",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -348,6 +353,11 @@ Host gitlab.example.com         // git仓库域名
 
 
 
+  
+    <script src="/blog/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/blog/js/post.js" ></script>
+
 
 
   <script src="/blog/lib/smoothscroll/SmoothScroll.min.js" ></script>
@@ -388,7 +398,7 @@ Host gitlab.example.com         // git仓库域名
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Fourier&nbsp;",
+        "git配置ssh登录&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="LC">
   <meta name="keywords" content="">
-  <title>Unknown</title>
+  <title>标签 - ssh ~ Unknown</title>
 
   <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/blog/lib/bootstrap/css/bootstrap.min.css"  >
@@ -40,7 +40,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -123,10 +123,6 @@
           </div>
 
           
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
-          
         </div>
       </div>
       <div style="position: absolute;height: 100%;width: 100%;">
@@ -150,118 +146,20 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mx-auto index-card">
+<div class="list-group">
+<!--  <p class="h4">共计 1 篇文章</p>-->
+  <hr>
+  
     
+      
+      <p class="h5">2020</p>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/blog/2020/03/12/git-ssh/">
-        <p class="h4 index-header">git配置ssh登录</p>
-      </a>
-
-      <a href="/blog/2020/03/12/git-ssh/">
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">1. 生成ssh密钥$  ssh-keygen -o -t rsa -b 4096 -C &quot;email@example.com&quot;
-2. 复制公钥$ cat ~/.ssh/id_rsa.pub
-3. gitlab或github管理页面添加ssh-key4. 配置本机使用的私钥 - 创建并编辑~/.ssh/config# 注意如果git私有仓库配置了其他ssh端口，下面需配置PORT
-Host gitlab.example.com         // git仓库域名
-    User git                    // git
-    Hostname gitlab.example.com // git仓库域名
-    PORT 8022                   // 默认22，如果私有仓库使用其他端口需配置如：8022
-    IdentityFile ~/.ssh/id_rsa  // 私钥路径
+    <a href="/blog/2020/03/12/git-ssh/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">git配置ssh登录</span>
+      <span style="float: right;">03-12</span>
+    </a>
+  
 </div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-12&nbsp;&nbsp;
-        
-        
-          <i class="iconfont icon-inbox"></i>
-          
-            <a href="/categories/git">git</a>&nbsp;
-          &nbsp;
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/git">git</a>&nbsp;
-          
-            <a href="/tags/ssh">ssh</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/blog/2020/03/06/install-docker/" target="_self">
-          <img src="/blog/img/docker.jpg" srcset="/blog/img/loading.gif" alt="centos 安装 docker" class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/blog/2020/03/06/install-docker/">
-        <p class="h4 index-header">centos 安装 docker</p>
-      </a>
-
-      <a href="/blog/2020/03/06/install-docker/">
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">centos1. 卸载旧版本   $ sudo yum remove docker \
-                     docker-client \
-                     docker-client-latest \
-                     docker-common \
-                     docker-latest \
-                     docker-latest-logrotate \
-                     docker-logrotate \
-                     docker-engine
-2. 安装依赖   $ sudo yum install -y yum-utils \
-     device-mapper-persistent-data \
-     lvm2
-3. 设置镜像源   # 官方镜像源
-   $ sudo yum-config-manager \
-       --add-repo \
-       https://dow</div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-06&nbsp;&nbsp;
-        
-        
-          <i class="iconfont icon-inbox"></i>
-          
-            <a href="/categories/docker">docker</a>&nbsp;
-          &nbsp;
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/linux">linux</a>&nbsp;
-          
-            <a href="/tags/centos">centos</a>&nbsp;
-          
-            <a href="/tags/docker">docker</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-
 
 
 
@@ -388,7 +286,7 @@ Host gitlab.example.com         // git仓库域名
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Fourier&nbsp;",
+        "标签 - ssh&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

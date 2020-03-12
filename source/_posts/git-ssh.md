@@ -1,5 +1,6 @@
 ---
 title: git配置ssh登录
+index_img: /blog/img/git.jpg
 date: 2020-03-12 10:30:52
 categories: 
 - git
